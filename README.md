@@ -1,10 +1,10 @@
 # Secure Maritime Project Finance Engine
 
-A deterministic project finance underwriting model for a **$2.5bn secure deepwater maritime logistics hub**.
+Hello everyone, this is a deterministic project-finance underwriting model I made for a hypothetical **$2.5bn secure deepwater maritime logistics hub**.
 
-The model treats the asset like a real credit-sizing problem: construction funding first, then operating CFADS, senior debt service, mezzanine PIK mechanics, covenant testing, and sponsor distributions. It avoids stochastic noise because this kind of first-pass underwriting usually starts with a deterministic case pack before anyone gets cute with Monte Carlo.
+The model treats the asset like a real credit-sizing problem, namely construction funding first, then operating CFADS, senior debt service, the mezzanine PIK mechanics, covenant testing, and then sponsor distributions. It avoids stochastic noise because this kind of first-pass underwriting usually starts with a deterministic case pack before anyone gets cute with Monte Carlo!!! (important to note).
 
-## Transaction snapshot
+## The transaction context
 
 | Item | Assumption |
 |---|---:|
@@ -22,7 +22,7 @@ The model treats the asset like a real credit-sizing problem: construction fundi
 | Mezzanine coupon | 7.5%, PIK when cash chokes |
 | First-loss guarantee | 10.0% of senior debt in the protected stress case |
 
-## What the model does
+## What my model does
 
 The engine sizes senior debt off the binding DSCR year, then pushes the same capital stack through three deterministic cases:
 
@@ -32,7 +32,7 @@ The engine sizes senior debt off the binding DSCR year, then pushes the same cap
 
 The output is a terminal report with annual construction draws, operating cash flow, debt service, PIK accretion, DSCR, LLCR, overcollateralization ratio, guarantee draws, and breach logs.
 
-## Architecture
+## Layout of my work
 
 ```text
 TransactionConfig
@@ -62,7 +62,7 @@ ScenarioRunner + TerminalReport
     |---- First-Loss Guarantee Frame
 ```
 
-## Main model logic
+## The main model logic
 
 ### Senior debt sizing
 
@@ -83,7 +83,7 @@ LLCR_t = NPV(remaining CFADS through senior maturity, discounted at senior debt 
          / senior opening balance_t
 ```
 
-DSCR tells you if the year can pay. LLCR tells you whether the remaining loan life still has enough cash depth.
+DSCR tells you if the year can pay, and LLCR tells you whether the remaining loan life still has enough cash depth.
 
 ### Waterfall
 
@@ -135,7 +135,7 @@ source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## Run the model
+## How to run the model
 
 ```bash
 python examples/run_project_finance.py
@@ -157,4 +157,4 @@ The tests check senior debt sizing, base-case senior repayment, stress-case cove
 
 ## Notes on scope
 
-This is a deterministic underwriting engine. It is not trying to be a live bank model and it does not pull market data. The point is to make the credit math explicit: how much senior debt fits, where the stress breaks, how PIK moves risk down the stack, and what a first-loss support layer actually changes.
+This is a deterministic underwriting engine. It is not trying to be a live bank model, and it does not pull market data! The point is to make the credit math explicit in how much senior debt fits, where the stress breaks and how PIK moves risk down the stack, and what a first-loss support layer actually changes.
