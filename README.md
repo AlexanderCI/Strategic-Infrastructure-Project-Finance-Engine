@@ -26,9 +26,9 @@ The model treats the asset like a real credit-sizing problem, namely constructio
 
 The engine sizes senior debt off the binding DSCR year, then pushes the same capital stack through three deterministic cases:
 
-1. **Base Case** — normal operating ramp, senior debt sized against the 1.30x DSCR covenant floor.
-2. **Supply Chain Margin Compression Shock** — Years 6-9 take a 25% revenue hit and OPEX jumps to 45% of revenue.
-3. **First-Loss Multilateral Guarantee Frame** — same stress case, but a 10% first-loss support pool covers senior debt service shortfalls and lowers the senior risk spread.
+1. **Base Case**: normal operating ramp, senior debt sized against the 1.30x DSCR covenant floor.
+2. **Supply Chain Margin Compression Shock**: Years 6-9 take a 25% revenue hit and OPEX jumps to 45% of revenue.
+3. **First-Loss Multilateral Guarantee Frame**: same stress case, but a 10% first-loss support pool covers senior debt service shortfalls and lowers the senior risk spread.
 
 The output is a terminal report with annual construction draws, operating cash flow, debt service, PIK accretion, DSCR, LLCR, overcollateralization ratio, guarantee draws, and breach logs.
 
