@@ -155,6 +155,6 @@ pytest
 
 The tests check senior debt sizing, base-case senior repayment, stress-case covenant breaches, and the first-loss guarantee mechanics.
 
-## Notes on scope
+## Notes on scope of my work
 
-This is a deterministic underwriting engine. It is not trying to be a live bank model, and it does not pull market data! The point is to make the credit math explicit in how much senior debt fits, where the stress breaks and how PIK moves risk down the stack, and what a first-loss support layer actually changes.
+This is a deterministic underwriting engine. It is not trying to be a live bank model, and it does not pull market data! The point is to make the credit math explicit in how much senior debt fits, where the stress breaks and how PIK moves risk down the stack, and what a first-loss support layer actually changes. Enjoy!
