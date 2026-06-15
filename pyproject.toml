@@ -1,0 +1,14 @@
+[project]
+name = "secure-maritime-project-finance-engine"
+version = "0.1.0"
+description = "Deterministic project finance underwriting and credit sizing engine for a strategic maritime logistics asset."
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
